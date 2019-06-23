@@ -13,7 +13,7 @@ namespace DatingApp.API.Dtos
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "Password must be provided")]
-        [StringLength(50, MinimumLength = 4, ErrorMessage = "Password max length allow is 50 characters")]
+        [StringLength(50, MinimumLength = 8, ErrorMessage = "Password max length allow is 50 characters")]
         public string Password { get; set; }
     }
 }
