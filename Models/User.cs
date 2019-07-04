@@ -12,5 +12,19 @@ namespace DatingApp.API.Models
         public byte[] PasswordHash { get; set; }
 
         public byte[] PasswrodSalt { get; set; }
+
+        public string Email { get; set; }
+
+        public string Phone { get; set; }
+
+        public string Adress { get; set; }
+
+        public string Adress2 { get; set; }
+
+        public int City { get; set; }
+
+        public int State { get; set; }
+
+        public string Zip { get; set; }
     }
 }
