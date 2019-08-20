@@ -33,13 +33,13 @@ namespace DatingApp.API.Models
         [Required]
         public string Zip { get; set; }
 
-        [ForeignKey("Cities")]
+        public int CityId { get; set; }
         public City City { get; set; }
 
-        [ForeignKey("States")]
+        public int StateId { get; set; }
         public State State { get; set; }
 
-        [ForeignKey("Countries")]
+        public int CountryId { get; set; }
         public Country Country { get; set; }
     }
 }

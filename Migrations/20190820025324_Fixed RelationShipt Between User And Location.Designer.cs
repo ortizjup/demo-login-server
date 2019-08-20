@@ -4,14 +4,16 @@ using DatingApp.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DatingApp.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20190820025324_Fixed RelationShipt Between User And Location")]
+    partial class FixedRelationShiptBetweenUserAndLocation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -73,7 +75,11 @@ namespace DatingApp.API.Migrations
                     b.Property<string>("Adress2")
                         .IsRequired();
 
+                    b.Property<int>("Cities");
+
                     b.Property<int>("CityId");
+
+                    b.Property<int>("Countries");
 
                     b.Property<int>("CountryId");
 
@@ -91,6 +97,8 @@ namespace DatingApp.API.Migrations
 
                     b.Property<int>("StateId");
 
+                    b.Property<int>("States");
+
                     b.Property<string>("UserName")
                         .IsRequired();
 
@@ -99,11 +107,11 @@ namespace DatingApp.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CityId");
+                    b.HasIndex("Cities");
 
-                    b.HasIndex("CountryId");
+                    b.HasIndex("Countries");
 
-                    b.HasIndex("StateId");
+                    b.HasIndex("States");
 
                     b.ToTable("Users");
                 });
@@ -125,17 +133,17 @@ namespace DatingApp.API.Migrations
                 {
                     b.HasOne("DatingApp.API.Models.City", "City")
                         .WithMany()
-                        .HasForeignKey("CityId")
+                        .HasForeignKey("Cities")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("DatingApp.API.Models.Country", "Country")
                         .WithMany()
-                        .HasForeignKey("CountryId")
+                        .HasForeignKey("Countries")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("DatingApp.API.Models.State", "State")
                         .WithMany()
-                        .HasForeignKey("StateId")
+                        .HasForeignKey("States")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

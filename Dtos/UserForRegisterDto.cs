@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DatingApp.API.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -28,11 +29,14 @@ namespace DatingApp.API.Dtos
         [Required(ErrorMessage = "Adress2 must be provdided")]
         public string Adress2 { get; set; }
 
+        [Required(ErrorMessage = "Country must be provided")]
+        public Country Country { get; set; }
+
         [Required(ErrorMessage = "City must be provided")]
-        public int City { get; set; }
+        public City City { get; set; }
 
         [Required(ErrorMessage = "State must be provided")]
-        public int State { get; set; }
+        public State State { get; set; }
 
         [Required(ErrorMessage = "Zip code must be provided")]
         public string Zip { get; set; }

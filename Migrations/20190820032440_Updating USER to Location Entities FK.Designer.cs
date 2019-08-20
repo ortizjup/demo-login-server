@@ -4,14 +4,16 @@ using DatingApp.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DatingApp.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20190820032440_Updating USER to Location Entities FK")]
+    partial class UpdatingUSERtoLocationEntitiesFK
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,7 +77,9 @@ namespace DatingApp.API.Migrations
 
                     b.Property<int>("CityId");
 
-                    b.Property<int>("CountryId");
+                    b.Property<int?>("CountryId");
+
+                    b.Property<int>("CountyId");
 
                     b.Property<string>("Email")
                         .IsRequired();
@@ -130,8 +134,7 @@ namespace DatingApp.API.Migrations
 
                     b.HasOne("DatingApp.API.Models.Country", "Country")
                         .WithMany()
-                        .HasForeignKey("CountryId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CountryId");
 
                     b.HasOne("DatingApp.API.Models.State", "State")
                         .WithMany()
