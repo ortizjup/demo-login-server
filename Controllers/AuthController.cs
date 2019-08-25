@@ -34,34 +34,26 @@ namespace DatingApp.API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserForRegisterDto userForRegisterDto)
         {
-            try
+            userForRegisterDto.UserName = userForRegisterDto.UserName.ToLower();
+
+            if (await _repo.UserExist(userForRegisterDto.UserName))
+                return BadRequest("Username already exists");
+
+            var newUser = new User
             {
-                userForRegisterDto.UserName = userForRegisterDto.UserName.ToLower();
+                Email = userForRegisterDto.Email,
+                UserName = userForRegisterDto.Email,
+                Adress = userForRegisterDto.Adress,
+                Adress2 = userForRegisterDto.Adress2,
+                Zip = userForRegisterDto.Zip,
+                Phone = userForRegisterDto.Phone,
+                CityId = userForRegisterDto.City.Id,
+                CountryId = userForRegisterDto.Country.Id,
+                StateId = userForRegisterDto.State.Id
+            };
 
-                if (await _repo.UserExist(userForRegisterDto.UserName))
-                    return BadRequest("Username already exists");
+            var userToCreate = await _repo.RegisterUser(newUser, userForRegisterDto.Password);
 
-                var newUser = new User
-                {
-                    Email = userForRegisterDto.Email,
-                    UserName = userForRegisterDto.Email,
-                    Adress = userForRegisterDto.Adress,
-                    Adress2 = userForRegisterDto.Adress2,
-                    Zip = userForRegisterDto.Zip,
-                    Phone = userForRegisterDto.Phone,
-                    CityId = userForRegisterDto.City.Id,
-                    CountryId = userForRegisterDto.Country.Id,
-                    StateId = userForRegisterDto.State.Id
-                };
-
-                var userToCreate = await _repo.RegisterUser(newUser, userForRegisterDto.Password);
-
-                
-            }
-            catch (Exception ex)
-            {
-
-            }
             return StatusCode(201);
         }
 
