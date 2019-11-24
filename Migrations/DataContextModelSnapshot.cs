@@ -25,12 +25,21 @@ namespace DatingApp.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("CountryCode")
+                        .IsRequired();
+
                     b.Property<string>("Description")
+                        .IsRequired();
+
+                    b.Property<string>("Lat")
+                        .IsRequired();
+
+                    b.Property<string>("Lng")
                         .IsRequired();
 
                     b.HasKey("Id");
 
-                    b.ToTable("City");
+                    b.ToTable("Cities");
                 });
 
             modelBuilder.Entity("DatingApp.API.Models.Country", b =>
@@ -39,12 +48,40 @@ namespace DatingApp.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("CountryCode")
+                        .IsRequired();
+
                     b.Property<string>("Description")
                         .IsRequired();
 
                     b.HasKey("Id");
 
-                    b.ToTable("Country");
+                    b.ToTable("Countries");
+                });
+
+            modelBuilder.Entity("DatingApp.API.Models.Photo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DateAdded");
+
+                    b.Property<string>("Description");
+
+                    b.Property<bool>("IsMain");
+
+                    b.Property<bool>("ShowPhoto");
+
+                    b.Property<string>("Url");
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Photos");
                 });
 
             modelBuilder.Entity("DatingApp.API.Models.State", b =>
@@ -56,9 +93,12 @@ namespace DatingApp.API.Migrations
                     b.Property<string>("Description")
                         .IsRequired();
 
+                    b.Property<string>("StateCode")
+                        .IsRequired();
+
                     b.HasKey("Id");
 
-                    b.ToTable("State");
+                    b.ToTable("States");
                 });
 
             modelBuilder.Entity("DatingApp.API.Models.User", b =>
@@ -77,8 +117,22 @@ namespace DatingApp.API.Migrations
 
                     b.Property<int>("CountryId");
 
+                    b.Property<DateTime>("Created");
+
+                    b.Property<DateTime>("DateOfBirth");
+
                     b.Property<string>("Email")
                         .IsRequired();
+
+                    b.Property<string>("Gender");
+
+                    b.Property<string>("Introduction");
+
+                    b.Property<string>("KnownAs");
+
+                    b.Property<DateTime>("LastActived");
+
+                    b.Property<string>("LookingFor");
 
                     b.Property<byte[]>("PasswordHash")
                         .IsRequired();
@@ -119,6 +173,14 @@ namespace DatingApp.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Values");
+                });
+
+            modelBuilder.Entity("DatingApp.API.Models.Photo", b =>
+                {
+                    b.HasOne("DatingApp.API.Models.User", "User")
+                        .WithMany("Photos")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("DatingApp.API.Models.User", b =>

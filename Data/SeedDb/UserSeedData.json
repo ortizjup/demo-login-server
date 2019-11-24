@@ -1,0 +1,30 @@
+[
+  {
+    "username": "prueba@gmail.com",
+    "adress": "Valencia 547",
+    "adress2": "Valencia 547",
+    "email": "prueba@gmail.com",
+    "phone": "3547422705",
+    "password": "password",
+    "created": "2017-08-02",
+    "dateOfBirth": "1994-02-21",
+    "gender": "female",
+    "introduction": "Nulla excepteur sit anim ex do qui laboris officia eiusmod ut incididunt. Enim occaecat sint dolor esse et enim. Ad cupidatat exercitation ea id eiusmod nostrud amet Lorem sint. Laboris cupidatat aute dolor ad eu tempor elit ea tempor quis et. Lorem eiusmod commodo cillum id aute nisi fugiat. Aute laborum tempor ullamco elit exercitation veniam commodo elit dolor.\r\n",
+    "knownAs": "Lola",
+    "lastActive": "2017-08-02",
+    "lookingFor": "Non do nostrud voluptate cupidatat et proident enim labore voluptate incididunt labore. Incididunt consectetur dolor proident nulla tempor et ipsum anim duis aute commodo duis. Est ullamco fugiat velit exercitation sunt enim duis nisi laborum culpa. Magna reprehenderit excepteur commodo nisi ullamco pariatur laboris. Ullamco fugiat eiusmod veniam duis elit. Cupidatat non occaecat consectetur sunt qui anim. In commodo in deserunt et veniam ad nulla.\r\n",
+    "zip": "5000",
+    "countryId": "1",
+    "cityId": "1",
+    "stateId": "1",
+    "photos": [
+      {
+        "url": "https://randomuser.me/api/portraits/women/3.jpg",
+        "isMain": true,
+        "description": "Non deserunt labore sunt ex laboris et adipisicing ullamco officia minim.",
+        "dateAdded": "2017-08-02",
+        "showPhoto": true
+      }
+    ]
+  }
+]

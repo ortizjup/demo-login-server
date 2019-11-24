@@ -18,6 +18,24 @@ namespace DatingApp.API.Models
         [Required]
         public byte[] PasswrodSalt { get; set; }
 
+        public string Gender { get; set; }
+
+        public DateTime DateOfBirth { get; set; }
+
+        public string KnownAs { get; set; }
+
+        public DateTime Created { get; set; }
+
+        public DateTime LastActived { get; set; }
+
+        public string Introduction { get; set; }
+
+        public string LookingFor { get; set; }
+
+        public ICollection<Photo> Photos { get; set; }
+
+
+
         [Required]
         public string Email { get; set; }
 

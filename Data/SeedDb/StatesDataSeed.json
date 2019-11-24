@@ -1,0 +1,238 @@
+[
+    {
+        "description": "Alabama",
+        "stateCode": "AL"
+    },
+    {
+        "description": "Alaska",
+        "stateCode": "AK"
+    },
+    {
+        "description": "American Samoa",
+        "stateCode": "AS"
+    },
+    {
+        "description": "Arizona",
+        "stateCode": "AZ"
+    },
+    {
+        "description": "Arkansas",
+        "stateCode": "AR"
+    },
+    {
+        "description": "California",
+        "stateCode": "CA"
+    },
+    {
+        "description": "Colorado",
+        "stateCode": "CO"
+    },
+    {
+        "description": "Connecticut",
+        "stateCode": "CT"
+    },
+    {
+        "description": "Delaware",
+        "stateCode": "DE"
+    },
+    {
+        "description": "District Of Columbia",
+        "stateCode": "DC"
+    },
+    {
+        "description": "Federated States Of Micronesia",
+        "stateCode": "FM"
+    },
+    {
+        "description": "Florida",
+        "stateCode": "FL"
+    },
+    {
+        "description": "Georgia",
+        "stateCode": "GA"
+    },
+    {
+        "description": "Guam Gu",
+        "stateCode": "GU"
+    },
+    {
+        "description": "Hawaii",
+        "stateCode": "HI"
+    },
+    {
+        "description": "Idaho",
+        "stateCode": "ID"
+    },
+    {
+        "description": "Illinois",
+        "stateCode": "IL"
+    },
+    {
+        "description": "Indiana",
+        "stateCode": "IN"
+    },
+    {
+        "description": "Iowa",
+        "stateCode": "IA"
+    },
+    {
+        "description": "Kansas",
+        "stateCode": "KS"
+    },
+    {
+        "description": "Kentucky",
+        "stateCode": "KY"
+    },
+    {
+        "description": "Louisiana",
+        "stateCode": "LA"
+    },
+    {
+        "description": "Maine",
+        "stateCode": "ME"
+    },
+    {
+        "description": "Marshall Islands",
+        "stateCode": "MH"
+    },
+    {
+        "description": "Maryland",
+        "stateCode": "MD"
+    },
+    {
+        "description": "Massachusetts",
+        "stateCode": "MA"
+    },
+    {
+        "description": "Michigan",
+        "stateCode": "MI"
+    },
+    {
+        "description": "Minnesota",
+        "stateCode": "MN"
+    },
+    {
+        "description": "Mississippi",
+        "stateCode": "MS"
+    },
+    {
+        "description": "Missouri",
+        "stateCode": "MO"
+    },
+    {
+        "description": "Montana",
+        "stateCode": "MT"
+    },
+    {
+        "description": "Nebraska",
+        "stateCode": "NE"
+    },
+    {
+        "description": "Nevada",
+        "stateCode": "NV"
+    },
+    {
+        "description": "New Hampshire",
+        "stateCode": "NH"
+    },
+    {
+        "description": "New Jersey",
+        "stateCode": "NJ"
+    },
+    {
+        "description": "New Mexico",
+        "stateCode": "NM"
+    },
+    {
+        "description": "New York",
+        "stateCode": "NY"
+    },
+    {
+        "description": "North Carolina",
+        "stateCode": "NC"
+    },
+    {
+        "description": "North Dakota",
+        "stateCode": "ND"
+    },
+    {
+        "description": "Northern Mariana Islands",
+        "stateCode": "MP"
+    },
+    {
+        "description": "Ohio",
+        "stateCode": "OH"
+    },
+    {
+        "description": "Oklahoma",
+        "stateCode": "OK"
+    },
+    {
+        "description": "Oregon",
+        "stateCode": "OR"
+    },
+    {
+        "description": "Palau",
+        "stateCode": "PW"
+    },
+    {
+        "description": "Pennsylvania",
+        "stateCode": "PA"
+    },
+    {
+        "description": "Puerto Rico",
+        "stateCode": "PR"
+    },
+    {
+        "description": "Rhode Island",
+        "stateCode": "RI"
+    },
+    {
+        "description": "South Carolina",
+        "stateCode": "SC"
+    },
+    {
+        "description": "South Dakota",
+        "stateCode": "SD"
+    },
+    {
+        "description": "Tennessee",
+        "stateCode": "TN"
+    },
+    {
+        "description": "Texas",
+        "stateCode": "TX"
+    },
+    {
+        "description": "Utah",
+        "stateCode": "UT"
+    },
+    {
+        "description": "Vermont",
+        "stateCode": "VT"
+    },
+    {
+        "description": "Virgin Islands",
+        "stateCode": "VI"
+    },
+    {
+        "description": "Virginia",
+        "stateCode": "VA"
+    },
+    {
+        "description": "Washington",
+        "stateCode": "WA"
+    },
+    {
+        "description": "West Virginia",
+        "stateCode": "WV"
+    },
+    {
+        "description": "Wisconsin",
+        "stateCode": "WI"
+    },
+    {
+        "description": "Wyoming",
+        "stateCode": "WY"
+    }
+]

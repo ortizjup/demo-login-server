@@ -11,5 +11,8 @@ namespace DatingApp.API.Models
     {
         [Required]
         public string Description { get; set; }
+
+        [Required]
+        public string StateCode { get; set; }
     }
 }
