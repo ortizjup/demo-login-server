@@ -1,26 +1,21 @@
-﻿using System;
+﻿using DatingApp.API.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DatingApp.API.Models
+namespace DatingApp.API.Dtos
 {
-    public class User : BaseEntity
+    public class UserForListDto
     {
-        [Required]
+        public int Id { get; set; }
+
         public string UserName { get; set; }
-
-        [Required]
-        public byte[] PasswordHash { get; set; }
-
-        [Required]
-        public byte[] PasswrodSalt { get; set; }
 
         public string Gender { get; set; }
 
-        public DateTime DateOfBirth { get; set; }
+        public int Age { get; set; }
 
         public string KnownAs { get; set; }
 
@@ -32,30 +27,22 @@ namespace DatingApp.API.Models
 
         public string LookingFor { get; set; }
 
-        public ICollection<Photo> Photos { get; set; }
-
-        [Required]
         public string Email { get; set; }
 
-        [Required]
         public string Phone { get; set; }
 
-        [Required]
         public string Adress { get; set; }
 
-        [Required]
         public string Adress2 { get; set; }
 
-        [Required]
         public string Zip { get; set; }
 
-        public int CityId { get; set; }
         public City City { get; set; }
 
-        public int StateId { get; set; }
         public State State { get; set; }
 
-        public int CountryId { get; set; }
         public Country Country { get; set; }
+
+        public string PhotoUrl { get; set; }
     }
 }
