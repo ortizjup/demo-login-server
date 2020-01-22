@@ -28,21 +28,22 @@ namespace DatingApp.API.Data
 
         public async Task<User> GetUser(int id)
         {
-            var user = await _context.Users.Include(i => i.Photos).FirstOrDefaultAsync(u => u.Id == id);
-
-            return user;
+            return await _context.Users
+                .Include(i => i.Photos)
+                .Include(c => c.Country)
+                .Include(s => s.State)
+                .Include(ct => ct.City)
+                .FirstOrDefaultAsync(u => u.Id == id);
         }
 
         public async Task<IEnumerable<User>> GetUsers()
         {
-            var users = await _context.Users
+            return await _context.Users
                 .Include(p => p.Photos)
                 .Include(c => c.City)
                 .Include(s => s.State)
                 .Include(c => c.Country)
                 .ToListAsync();
-
-            return users;
         }
 
         public async Task<bool> SaveAll()

@@ -12,6 +12,10 @@ namespace DatingApp.API.Models
         [Required]
         public string UserName { get; set; }
 
+        public string Interests { get; set; }
+
+        public string LookingFor { get; set; }
+
         [Required]
         public byte[] PasswordHash { get; set; }
 
@@ -29,8 +33,6 @@ namespace DatingApp.API.Models
         public DateTime LastActived { get; set; }
 
         public string Introduction { get; set; }
-
-        public string LookingFor { get; set; }
 
         public ICollection<Photo> Photos { get; set; }
 
