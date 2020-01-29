@@ -17,5 +17,11 @@ namespace DatingApp.API.Data
         Task<IEnumerable<User>> GetUsers();
 
         Task<User> GetUser(int id);
+
+        Task<IEnumerable<State>> GetStates();
+
+        Task<IEnumerable<Country>> GetCountries();
+
+        Task<IEnumerable<City>> GetCities();
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DatingApp.API.Models;
 using Microsoft.EntityFrameworkCore;
+using static Microsoft.AspNetCore.Razor.Language.TagHelperMetadata;
 
 namespace DatingApp.API.Data
 {
@@ -49,6 +50,21 @@ namespace DatingApp.API.Data
         public async Task<bool> SaveAll()
         {
             return await _context.SaveChangesAsync() > 0;
+        }
+
+        public async Task<IEnumerable<City>> GetCities()
+        {
+            return await _context.Cities.Take(50).ToListAsync();    
+        }
+
+        public async Task<IEnumerable<State>> GetStates()
+        {
+            return await _context.States.ToListAsync();
+        }
+
+        public async Task<IEnumerable<Country>> GetCountries()
+        {
+            return await _context.Countries.ToListAsync();
         }
     }
 }
