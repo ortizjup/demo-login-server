@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace DatingApp.API.Models
+namespace DatingApp.API.Dtos
 {
-    public class Photo : BaseEntity
+    public class PhotoForReturnDto
     {
         public string Url { get; set; }
 
@@ -12,13 +15,10 @@ namespace DatingApp.API.Models
 
         public bool IsMain { get; set; }
 
-        public string PublicId { get; set; }
-
         public bool ShowPhoto { get; set; }
-
-        public User User { get; set; }
 
         public int UserId { get; set; }
 
+        public string PublicId { get; set; }
     }
 }

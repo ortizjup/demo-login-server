@@ -16,8 +16,6 @@ namespace DatingApp.API.Controllers
         
         private readonly IGenericRepository _genRepo;
 
-        private IMapper _mapper;
-
         public LocationController(IGenericRepository genRepo, IMapper mapper)
         {
             _genRepo = genRepo;

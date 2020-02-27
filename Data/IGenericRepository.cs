@@ -23,5 +23,7 @@ namespace DatingApp.API.Data
         Task<IEnumerable<Country>> GetCountries();
 
         Task<IEnumerable<City>> GetCities();
+
+        Task<Photo> GetPhoto(int id);
     }
 }

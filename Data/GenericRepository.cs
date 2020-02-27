@@ -66,5 +66,10 @@ namespace DatingApp.API.Data
         {
             return await _context.Countries.ToListAsync();
         }
+
+        public async Task<Photo> GetPhoto(int id)
+        {
+            return await _context.Photos.Where(w => w.Id == id).FirstOrDefaultAsync();
+        }
     }
 }
