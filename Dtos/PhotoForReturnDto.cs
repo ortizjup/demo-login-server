@@ -15,10 +15,12 @@ namespace DatingApp.API.Dtos
 
         public bool IsMain { get; set; }
 
+        public string PublicId { get; set; }
+
         public bool ShowPhoto { get; set; }
 
         public int UserId { get; set; }
 
-        public string PublicId { get; set; }
+
     }
 }
