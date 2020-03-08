@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DatingApp.API.Data;
 using DatingApp.API.Dtos;
+using DatingApp.API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -53,7 +54,12 @@ namespace DatingApp.API.Controllers
 
             var userFromRepo = await _genRepo.GetUser(userDto.Id);
 
-            _mapper.Map(userDto, userFromRepo);
+            userFromRepo.Interests = userDto.Interests;
+            userFromRepo.Introduction = userDto.Introduction;
+            userFromRepo.LookingFor = userDto.LookingFor;
+            userFromRepo.CityId = userDto.City.Id;
+            userFromRepo.CountryId = userDto.Country.Id;
+            userFromRepo.StateId = userDto.State.Id;
 
             if (await _genRepo.SaveAll())
                 return NoContent();

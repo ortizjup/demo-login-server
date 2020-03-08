@@ -16,7 +16,7 @@ namespace DatingApp.API.Dtos
         public string Introduction { get; set; }
 
         [Required(ErrorMessage = "LookingFor field can no be empty")]
-        public string LookinFor { get; set; }
+        public string LookingFor { get; set; }
 
         [Required(ErrorMessage = "Interest can no be empty")]
         public string Interests { get; set; }
