@@ -52,12 +52,12 @@ namespace DatingApp.API.Dtos
 
         public DateTime Created { get; set; }
 
-        public DateTime LastActive { get; set; }
+        public DateTime LastActived { get; set; }
 
         public UserForRegisterDto()
         {
             Created = DateTime.Now;
-            LastActive = DateTime.Now;
+            LastActived = DateTime.Now;
         }
     }
 }
