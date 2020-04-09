@@ -29,11 +29,24 @@ namespace DatingApp.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUsers()
+        public async Task<IActionResult> GetUsers([FromQuery]UserParams userParams)
         {
-            var users = await _genRepo.GetUsers();
+            var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+
+            var userFromrepo = await this._genRepo.GetUser(currentUserId);
+
+            userParams.UserId = currentUserId;
+
+            if (string.IsNullOrEmpty(userParams.Gender))
+            {
+                userParams.Gender = userFromrepo.Gender == "male" ? "female" : "male";
+            }
+            var users = await _genRepo.GetUsers(userParams);
 
             var userForListDto = _mapper.Map<IEnumerable<UserForListDto>>(users);
+
+            //The pagination information is being retrieve to the client in the headers not in the user object itself.
+            Response.AddPagination(users.CurrentPage, users.PageSize, users.TotalCount, users.TotalPages);
 
             return Ok(userForListDto);
         }
