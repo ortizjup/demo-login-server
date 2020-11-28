@@ -22,5 +22,7 @@ namespace DatingApp.API.Data
         public DbSet<State> States { get; set; }
 
         public DbSet<Country> Countries { get; set; }
+
+        //TODO: Configure ralationships i deleted by mistake
     }
 }

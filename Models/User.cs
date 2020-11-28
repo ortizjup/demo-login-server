@@ -34,8 +34,6 @@ namespace DatingApp.API.Models
 
         public string Introduction { get; set; }
 
-        public ICollection<Photo> Photos { get; set; }
-
         [Required]
         public string Email { get; set; }
 
@@ -59,5 +57,11 @@ namespace DatingApp.API.Models
 
         public int CountryId { get; set; }
         public Country Country { get; set; }
+
+        public ICollection<Photo> Photos { get; set; }
+
+        public ICollection<Like> Likers { get; set; }
+
+        public ICollection<Like> Likees { get; set; }
     }
 }
